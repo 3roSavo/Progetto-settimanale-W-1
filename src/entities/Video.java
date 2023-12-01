@@ -1,7 +1,6 @@
 package entities;
 
-public class Video {
-    private String titolo;
+public class Video extends ElementoMultimediale {
     private int durata;
     private int volume;
     private int luminosita;
@@ -9,17 +8,13 @@ public class Video {
     //COSTRUTTORI
 
     public Video(String titolo, int durata, int volume, int luminosita) {
-        this.titolo = titolo;
+        super(titolo);
         this.durata = durata;
         this.volume = volume;
         this.luminosita = luminosita;
     }
 
     //GETTER E SETTER
-
-    public String getTitolo() {
-        return titolo;
-    }
 
     public int getDurata() {
         return durata;
@@ -50,98 +45,7 @@ public class Video {
     // METODI
 
     public void play() {
-
-        String stampaTitoli = "";
-        String numeroPuntiEsclamativi = "";
-        String luminositaInAsterischi = "";
-
-
-        switch (this.durata) {
-            case 1 : {
-                stampaTitoli = this.titolo;
-                break;
-            }
-            case 2 : {
-                stampaTitoli = this.titolo + this.titolo;
-                break;
-            }
-            case 3 : {
-                stampaTitoli = this.titolo + this.titolo + this.titolo;
-                break;
-            }
-            case 4 : {
-                stampaTitoli = this.titolo + this.titolo + this.titolo + this.titolo;
-                break;
-            }
-            case 5 : {
-                stampaTitoli = this.titolo + this.titolo + this.titolo + this.titolo + this.titolo;
-                break;
-            }
-            case 6 : {
-                stampaTitoli = this.titolo + this.titolo + this.titolo + this.titolo + this.titolo + this.titolo;
-                break;
-            }
-            case 7 : {
-                stampaTitoli = this.titolo + this.titolo + this.titolo + this.titolo + this.titolo + this.titolo + this.titolo;
-                break;
-            }
-            default: {
-                stampaTitoli = "durata non compresa tra 1 e 7";
-            }
-        }
-
-
-
-        if (this.volume == 0) {
-            numeroPuntiEsclamativi = "/";
-        } else if (this.volume == 1) {
-            numeroPuntiEsclamativi = "!";
-        } else if (this.volume == 2) {
-            numeroPuntiEsclamativi = "!!";
-        } else if (this.volume == 3) {
-            numeroPuntiEsclamativi = "!!!";
-        } else if (this.volume == 4) {
-            numeroPuntiEsclamativi = "!!!!";
-        } else if (this.volume == 5) {
-            numeroPuntiEsclamativi = "!!!!!";
-        } else {
-            numeroPuntiEsclamativi = "volume non compreso tra 0 e 5";
-        }
-
-
-        switch (this.luminosita) {
-            case 1 : {
-                luminositaInAsterischi = "*";
-                break;
-            }
-            case 2 : {
-                luminositaInAsterischi = "**";
-                break;
-            }
-            case 3 : {
-                luminositaInAsterischi = "***";
-                break;
-            }
-            case 4 : {
-                luminositaInAsterischi = "****";
-                break;
-            }
-            case 5 : {
-                luminositaInAsterischi = "*****";
-                break;
-            }
-            default: {
-                luminositaInAsterischi = "ERRORE: inserire un valore tra 1 e 5";
-            }
-        }
-
-        System.out.println(stampaTitoli + numeroPuntiEsclamativi + luminositaInAsterischi);
-
-
-
+        System.out.println(repeatTitle(this.durata, getTitolo()) + stampaVolume(this.volume) + stampaLuminosita(this.luminosita));
     }
-
-
-
 
 }
