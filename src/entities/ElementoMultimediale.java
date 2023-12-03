@@ -27,7 +27,7 @@ public abstract class ElementoMultimediale {
         return stampaTitoli;
     }
 
-    public static String stampaVolume(int volume) {
+    public String stampaVolume(int volume) {
         String numeroPuntiEsclamativi = "";
         for (int i = 0; i < volume; i++) {
             numeroPuntiEsclamativi += "!";
@@ -43,5 +43,8 @@ public abstract class ElementoMultimediale {
         return luminositaInAsterischi;
     }
 
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
 }
 
