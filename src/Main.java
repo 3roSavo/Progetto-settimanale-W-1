@@ -87,17 +87,17 @@ public class Main {
     }
     public static void funzioneIstanza(int num, ElementoMultimediale[] array) {
             if (array[num] instanceof Immagine) {
-                System.out.println("Tipologia media : Immagine, "
-                        + "titolo elemento : " + array[num].getTitolo()
+                System.out.println("Tipologia media : Immagine. "
+                        + "Titolo elemento : " + array[num].getTitolo()
                         + ", luminosità : " + ((Immagine) array[num]).getLuminosita());
             } else if (array[num] instanceof RegistrazioneAudio) {
-                System.out.println("Tipologia media : Registrazione audio, "
-                        + "titolo elemento : " + array[num].getTitolo()
+                System.out.println("Tipologia media : Registrazione audio. "
+                        + "Titolo elemento : " + array[num].getTitolo()
                         + ", volume : " + ((RegistrazioneAudio) array[num]).getVolume()
                         + ", durata : " + ((RegistrazioneAudio) array[num]).getDurata());
             } else if (array[num] instanceof Video) {
-                System.out.println("Tipologia media : Video, "
-                        + "titolo elemento : "+ array[num].getTitolo()
+                System.out.println("Tipologia media : Video. "
+                        + "Titolo elemento : "+ array[num].getTitolo()
                         + ", luminosità : " + ((Video) array[num]).getLuminosita()
                         + ", volume : " + ((Video) array[num]).getVolume()
                         + ", durata : " + ((Video) array[num]).getDurata());
